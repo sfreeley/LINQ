@@ -14,7 +14,7 @@ namespace linq
             IEnumerable<string> LFruits = from fruit in fruits
             where fruit.StartsWith("L")
             select fruit;
-
+            Console.WriteLine($"Words starting with 'L':");
             foreach (string fruit in LFruits)
             {
                 Console.WriteLine(fruit);
@@ -40,7 +40,7 @@ namespace linq
             };
 
             IEnumerable<int> fourSixMultiples = numbers.Where(number => number % 4 == 0 || number % 6 == 0);
-
+            Console.WriteLine($"Multiples of 4 and 6:");
             foreach (int num in fourSixMultiples)
             {
                 Console.WriteLine(num);
@@ -76,7 +76,7 @@ namespace linq
             };
 
             List<string> descend = names.OrderByDescending(name => name).ToList();
-
+            Console.WriteLine($"Descending order of names:");
             foreach (string descendingNames in descend)
             {
                 Console.WriteLine(descendingNames);
@@ -102,11 +102,65 @@ namespace linq
             };
 
             List<int> ascendingNumbers = numbers2.OrderBy(number => number).ToList();
-
+            Console.WriteLine("Ascending order of numbers:");
             foreach (int num in ascendingNumbers)
             {
+
                 Console.WriteLine(num);
             }
+
+            // Output how many numbers are in this list
+            List<int> numbers3 = new List<int>()
+            {
+                15,
+                8,
+                21,
+                24,
+                32,
+                13,
+                30,
+                12,
+                7,
+                54,
+                48,
+                4,
+                49,
+                96
+            };
+
+            Console.WriteLine($"Number count of list: {numbers3.Count}");
+
+            // How much money have we made?
+            List<double> purchases = new List<double>()
+            {
+                2340.29,
+                745.31,
+                21.76,
+                34.03,
+                4786.45,
+                879.45,
+                9442.85,
+                2454.63,
+                45.65
+            };
+
+            Console.WriteLine($"How much money we made: ${purchases.Sum()}");
+
+            // What is our most expensive product?
+            List<double> prices = new List<double>()
+            {
+                879.45,
+                9442.85,
+                2454.63,
+                45.65,
+                2340.29,
+                34.03,
+                4786.45,
+                745.31,
+                21.76
+            };
+
+            Console.WriteLine($"The most expensive product costs: ${prices.Max()}");
 
         }
     }
