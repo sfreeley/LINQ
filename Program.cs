@@ -162,6 +162,42 @@ namespace linq
 
             Console.WriteLine($"The most expensive product costs: ${prices.Max()}");
 
+            List<int> wheresSquaredo = new List<int>()
+            {
+                66,
+                12,
+                8,
+                27,
+                82,
+                34,
+                7,
+                50,
+                19,
+                46,
+                81,
+                23,
+                30,
+                4,
+                68,
+                14
+            };
+            /*
+                Store each number in the following List until a perfect square
+                is detected.
+
+                Expected output is { 66, 12, 8, 27, 82, 34, 7, 50, 19, 46 } 
+
+                Ref: https://msdn.microsoft.com/en-us/library/system.math.sqrt(v=vs.110).aspx
+            */
+
+            List<int> notPerfectSquare = wheresSquaredo.TakeWhile(num => num % Math.Sqrt(num) != 0).ToList();
+            Console.WriteLine("List of Not Perfect Squares:");
+            foreach (int num in notPerfectSquare)
+            {
+                Console.WriteLine(num);
+            }
+
         }
+
     }
 }
